@@ -3,18 +3,111 @@
     <script src="Mockup.js"></script>
     <style>
         body {
-            background-image: linear-gradient(to right, blue, lawngreen);
+            background: lightskyblue;
             text-align: center;
         }
 
         h1 {
+            text-shadow: 2px 2px 5px lightskyblue;
             color: black;
             text-align: center;
+            font-family: Georgia;
+            font-size: 60px;
+            background: slategray;
+            border-radius: 15px;
+            padding: 5px;
+            box-shadow: 2px 2px 5px black;
         }
+        .button {
+            box-shadow: 2px 2px 5px black;
+            align: center;
+            display: inline-block;
+            border-radius: 15px;
+            background-color: slategray;
+            border: none;
+            text-shadow: 1px 1px 3px lightskyblue;
+            color: black;
+            text-align: center;
+            font-size: 35px;
+            font-family: Georgia;
+            padding: 10px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -30px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .box-right {
+            font-family: Georgia;
+            text-shadow: 1px 1px 3px lightskyblue;
+            font-size: 20px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+            width: 180px;
+            height: 70px;
+            background: slategray;
+            box-shadow: 2px 2px 5px black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .box-left {
+            font-family: Georgia;
+            text-shadow: 1px 1px 3px lightskyblue;
+            font-size: 20px;
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            text-align: center;
+            width: 200px;
+            height: 90px;
+            background: slategray;
+            box-shadow: 2px 2px 5px black;
+            border-radius: 10px;
+
+        }
+
     </style>
 </head>
-<h1>(Game Name)</h1>
 
+<h1>Snake Royale</h1>
 
+<body>
+<button class="button"> <span>Play</span></button>
+<div class="box-right">
+    Developers:
+    Nick, Cassandra, and Priyanshi
+</div>
+<div class="box-left">
+    How To Play: Be the last one alive in the game to be declared the winner
+</div>
+</body>
 
 </html>
