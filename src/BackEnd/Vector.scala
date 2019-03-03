@@ -1,5 +1,5 @@
 package BackEnd
 
-class Vector(var xLoc: Double, var yLoc :Double) {
+class Vector(var x: Double, var y: Double) {
 
 }
