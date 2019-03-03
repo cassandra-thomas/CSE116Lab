@@ -26,13 +26,13 @@ object GUI extends JFXApp {
   val windowWidth: Double = 800
   val windowHeight: Double = 600
 
-  var playerRadius: Double = 20
+  var playerRadius: Double = 30
   val playerSpeed: Double = 10
 
   val crystalRadius: Double = 5
 
   val sceneGraphics: Group = new Group {}
-  var allPlayers: List[Circle] = List()
+  var allPlayers: Array[Circle] = new Array[Circle](20)
 
   val crystal: Circle = new Circle {
     centerX = Math.random() * windowWidth
@@ -42,24 +42,23 @@ object GUI extends JFXApp {
   }
   sceneGraphics.children.add(crystal)
 
-def addPlayer(): Unit = {
-  val newPlayer: Circle = new Circle {
+
+  val Player: Circle = new Circle {
     centerX = Math.random() * windowWidth
     centerY = Math.random() * windowHeight
     radius = playerRadius
-    fill = Color.Green
+    fill = Color.Blue
   }
-  sceneGraphics.children.add(newPlayer)
-  allPlayers = newPlayer :: allPlayers
-}
+  sceneGraphics.children.add(Player)
+  allPlayers :+ Player
 
 
   def keyPressed(keyCode: KeyCode): Unit = {
     keyCode.getName match {
-      case "W" => Player.value -= playerSpeed
-      case "A" => player.translateX.value -= playerSpeed
-      case "S" => player.translateY.value += playerSpeed
-      case "D" => player.translateX.value += playerSpeed
+      case "W" => Player.translateY.value -= playerSpeed
+      case "A" => Player.translateX.value -= playerSpeed
+      case "S" => Player.translateY.value += playerSpeed
+      case "D" => Player.translateX.value += playerSpeed
       case _ => println(keyCode.getName + " pressed with no action")
     }
   }
@@ -70,30 +69,9 @@ def addPlayer(): Unit = {
     scene = new Scene(windowWidth, windowHeight) {
       content = List(sceneGraphics)
 
-      // add an EventHandler[KeyEvent] to control player movement
       addEventHandler(KeyEvent.KEY_PRESSED, (event: KeyEvent) => keyPressed(event.getCode))
-
-      stage = new PrimaryStage {
-        title = "Circles Collide"
-        scene = new Scene(windowWidth, windowHeight) {
-          fill = Black
-          content = new HBox {
-            padding = Insets(20)
-            children = Seq(
-              new Text {
-                text = "Circles Collide"
-                style = "-fx-font-size: 48pt"
-                fill = new LinearGradient(
-                  endX = 0,
-                  stops = Stops(Cyan, DodgerBlue)
-                )
               }
-            )
           }
-        }
-      }
-    }
-  }
 }
 
 //object GUI extends JFXApp {
