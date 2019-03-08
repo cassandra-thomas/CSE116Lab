@@ -17,8 +17,8 @@ class TestWall extends FunSuite{
 
     var borders: Boundary = new Boundary(new Vector(0.0, 0.0), new Vector(800.0, 600.0))
 
-    assert(Game.detectWall(p, l ,borders))
-    assert(Game.detectWall(y, x, borders))
+    assert(Game.detectWall(p, l ,borders) == false)
+    assert(Game.detectWall(y, x, borders) == false)
     assert(Game.detectWall(b, a, borders))
 
   }
