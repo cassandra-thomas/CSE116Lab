@@ -260,7 +260,7 @@ object GUI extends JFXApp {
 
 
   new PrimaryStage {
-    this.title = "Circles Collide"
+    this.title = "Knockoff.io"
     scene = new Scene(windowWidth, windowHeight) {
       content = List(sceneGraphics)
       fill = Color.Black
@@ -275,10 +275,10 @@ object GUI extends JFXApp {
       fill = Color.Black
       var boxV = new VBox(30) {
         alignment = Pos.Center
-        padding = Insets(20)
+        padding = Insets(35)
         children = Seq(
           new Text {
-            text = "Circles Collide"
+            text = "Knockoff.io"
             style = "-fx-font-size: 90pt"
             fill = new LinearGradient(
               endX = 0,
@@ -305,7 +305,7 @@ object GUI extends JFXApp {
   }
 
   button.onAction = (e:ActionEvent) => new PrimaryStage {
-    this.title = "Circles Collide"
+    this.title = "Knockoff.io"
     scene = new Scene(windowWidth, windowHeight) {
       content = List(sceneGraphics)
       fill = Color.Black
@@ -326,10 +326,10 @@ object GUI extends JFXApp {
       }
       var boxV = new VBox(30) {
         alignment = Pos.Center
-        padding = Insets(20)
+        padding = Insets(35)
         children = Seq(
           new Text {
-            text = "Circles Collide"
+            text = "Knockoff.io"
             style = "-fx-font-size: 90pt"
             fill = new LinearGradient(
               endX = 0,

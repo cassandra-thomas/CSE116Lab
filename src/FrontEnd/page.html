@@ -92,13 +92,48 @@
             background: slategray;
             box-shadow: 2px 2px 5px black;
             border-radius: 10px;
-
+        }
+        .circle1 {
+            position: fixed;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: black;
+            bottom: 200px;
+            left: 75px;
+        }
+        .circle2 {
+            position: fixed;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: green;
+            bottom: 200px;
+            left: 350px;
+        }
+        .circle3 {
+            position: fixed;
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            background-color: red;
+            bottom: 400px;
+            left: 150px;
+        }
+        .circle4 {
+            position: fixed;
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            background-color: rebeccapurple;
+            bottom: 300px;
+            left: 550px;
         }
 
     </style>
 </head>
 
-<h1>Circles Collide</h1>
+<h1>Knockoff.io</h1>
 
 <body>
 <button class="button"> <span>Play</span></button>
@@ -107,9 +142,13 @@
     Nick, Cassandra, and Priyanshi
 </div>
 <div class="box-left">
-    How To Play: Be the last one alive in the game to be declared the winner
+    How To Play: Use WASD to move and eat other circles that are smaller than you
 </div>
-<div id = "GUI"></div>
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="circle3"></div>
+<div class="circle4"></div>
+
 </body>
 
 </html>
