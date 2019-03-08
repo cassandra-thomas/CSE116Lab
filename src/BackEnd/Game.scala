@@ -28,16 +28,16 @@ object Game {
     }
   }
 
-  def detectCollision(player1: Player, player2: Player, crystal: Crystals): Unit = {
+  def detectCrystalCollision(player1: Player, crystal: Crystals): Unit = {
     //detecting collision between a player and crystals
-    if((player1.center.x + player1.radius) == crystal.location.x || (player1.center.y + player1.radius) == crystal.location.y){
+    if (Math.abs(player1.center.x - crystal.location.x) <= player1.radius && Math.abs(player1.center.y - crystal.location.y) <= player1.radius) {
       eatCrystals(player1)
     }
-    if((player2.center.x + player2.radius) == crystal.location.x || (player2.center.y + player2.radius) == crystal.location.y){
-      eatCrystals(player2)
-    }
+  }
+
+  def playerCollision(player1: Player, player2: Player): Unit = {
     //detecting collisions between players
-    if(Math.abs(player1.center.x - player2.center.x) <= 20.0 || Math.abs(player1.center.y - player2.center.y) <= 20.0){
+    if(Math.abs(player1.center.x - player2.center.x) <= 20.0 && Math.abs(player1.center.y - player2.center.y) <= 20.0){
       if(player1.radius > player2.radius){
         eatPlayer(player1, player2)
       }
